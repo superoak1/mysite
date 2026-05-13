@@ -1,4 +1,4 @@
-baseURL = 'https://chikit.ca/'
+baseURL = 'https://www.chikit.ca/'
 languageCode = 'en-US'
 title = "Chikit Portfolio"
 theme = 'mana'
