@@ -1,0 +1,22 @@
+baseURL = 'http://localhost/'
+languageCode = 'en-US'
+title = 'My Site'
+theme = 'mana'
+
+[outputs]
+  home = ['HTML', 'JSON']
+
+[params]
+  description = 'My site description'
+  heroTitleLine1 = 'YOUR NAME'
+  heroTitleLine2 = 'Your tagline'
+
+[[menus.main]]
+  name = 'Home'
+  pageRef = '/'
+  weight = 10
+
+[[menus.main]]
+  name = 'Posts'
+  pageRef = '/posts'
+  weight = 20

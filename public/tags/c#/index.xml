@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>C# on Chikit</title>
+    <link>http://localhost/tags/c%23/</link>
+    <description>Recent content in C# on Chikit</description>
+    <generator>Hugo</generator>
+    <language>en-US</language>
+    <lastBuildDate>Mon, 02 Feb 2026 00:00:00 +0000</lastBuildDate>
+    <atom:link href="http://localhost/tags/c%23/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Game Jam: Run Orpheus Run!</title>
+      <link>http://localhost/posts/run-orpheus-run/</link>
+      <pubDate>Mon, 02 Feb 2026 00:00:00 +0000</pubDate>
+      <guid>http://localhost/posts/run-orpheus-run/</guid>
+      <description>&lt;iframe frameborder=&#34;0&#34; src=&#34;https://itch.io/embed/3928264&#34; width=&#34;552&#34; height=&#34;167&#34;&gt;&lt;a href=&#34;https://arian-shahrabi.itch.io/run-orpheus&#34;&gt;Run Orpheus Run! by Arian, superoak, NoahOutTheWoods, Ethan Ticar&lt;/a&gt;&lt;/iframe&gt;&#xA;&lt;p&gt;(please excuse the bad cover image, I&amp;rsquo;m no artist)&lt;/p&gt;&#xA;&lt;p&gt;Check out &lt;a href=&#34;https://arian-shahrabi.itch.io/run-orpheus&#34;&gt;Run Orpheus Run!&lt;/a&gt;.&lt;/p&gt;&#xA;&lt;p&gt;Run Orpheus Run! — TFS Game Jam, Summer 2025&#xA;A 3-day endless runner built on Greek mythology. You play as Orpheus fleeing the Underworld, with Hades closing in behind you. Navigate procedurally generated obstacles across three lanes, collect coins, and survive as long as possible before he catches you.&#xA;My roles:&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Game Jam: Rogue Malfunction</title>
+      <link>http://localhost/posts/rogue-malfunction/</link>
+      <pubDate>Sun, 21 Dec 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost/posts/rogue-malfunction/</guid>
+      <description>&lt;iframe frameborder=&#34;0&#34; src=&#34;https://itch.io/embed/4155009&#34; width=&#34;552&#34; height=&#34;167&#34;&gt;&lt;a href=&#34;https://arian-shahrabi.itch.io/rogue&#34;&gt;Rogue Malfunction by Arian, Ethan Ticar, superoak, Alice_TFS&lt;/a&gt;&lt;/iframe&gt;&#xA;&lt;p&gt;Check out &lt;a href=&#34;https://arian-shahrabi.itch.io/rogue&#34;&gt;Rogue Malfunction&lt;/a&gt;.&lt;/p&gt;&#xA;&lt;p&gt;A 4-day puzzle platformer built on a single core mechanic: dynamic control remapping. On entering each room, the game silently reassigns WASD inputs — turning movement itself into the obstacle. The design challenge was making that feel fair and readable without losing the disorientation that makes it work.&#xA;My roles:&lt;/p&gt;&#xA;&lt;p&gt;Systems Designer — Architected the input remapping system, defining the logic for how and when controls shift per room to ensure the mechanic felt intentional and tunable rather than arbitrary&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>
