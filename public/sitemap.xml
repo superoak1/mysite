@@ -2,16 +2,6 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>http://localhost:1313/tags/ai/</loc>
-    <lastmod>2026-05-12T00:00:00+00:00</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.3</priority>
-    <xhtml:link
-               rel="alternate"
-               hreflang="en"
-               href="http://localhost:1313/tags/ai/"/>
-  </url>
-  <url>
     <loc>http://localhost:1313/games/bayesian-networks-in-game-ai/</loc>
     <lastmod>2026-05-12T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
@@ -20,96 +10,6 @@
                rel="alternate"
                hreflang="en"
                href="http://localhost:1313/games/bayesian-networks-in-game-ai/"/>
-  </url>
-  <url>
-    <loc>http://localhost:1313/tags/blog/</loc>
-    <lastmod>2026-05-12T00:00:00+00:00</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.3</priority>
-    <xhtml:link
-               rel="alternate"
-               hreflang="en"
-               href="http://localhost:1313/tags/blog/"/>
-  </url>
-  <url>
-    <loc>http://localhost:1313/</loc>
-    <lastmod>2026-05-12T00:00:00+00:00</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>1.0</priority>
-    <xhtml:link
-               rel="alternate"
-               hreflang="en"
-               href="http://localhost:1313/"/>
-  </url>
-  <url>
-    <loc>http://localhost:1313/tags/fun-project/</loc>
-    <lastmod>2026-05-12T00:00:00+00:00</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.3</priority>
-    <xhtml:link
-               rel="alternate"
-               hreflang="en"
-               href="http://localhost:1313/tags/fun-project/"/>
-  </url>
-  <url>
-    <loc>http://localhost:1313/tags/game-dev/</loc>
-    <lastmod>2026-05-12T00:00:00+00:00</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.3</priority>
-    <xhtml:link
-               rel="alternate"
-               hreflang="en"
-               href="http://localhost:1313/tags/game-dev/"/>
-  </url>
-  <url>
-    <loc>http://localhost:1313/tags/html/</loc>
-    <lastmod>2026-05-12T00:00:00+00:00</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.3</priority>
-    <xhtml:link
-               rel="alternate"
-               hreflang="en"
-               href="http://localhost:1313/tags/html/"/>
-  </url>
-  <url>
-    <loc>http://localhost:1313/misc/</loc>
-    <lastmod>2026-05-12T00:00:00+00:00</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-    <xhtml:link
-               rel="alternate"
-               hreflang="en"
-               href="http://localhost:1313/misc/"/>
-  </url>
-  <url>
-    <loc>http://localhost:1313/tags/python/</loc>
-    <lastmod>2026-05-12T00:00:00+00:00</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.3</priority>
-    <xhtml:link
-               rel="alternate"
-               hreflang="en"
-               href="http://localhost:1313/tags/python/"/>
-  </url>
-  <url>
-    <loc>http://localhost:1313/tags/</loc>
-    <lastmod>2026-05-12T00:00:00+00:00</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.3</priority>
-    <xhtml:link
-               rel="alternate"
-               hreflang="en"
-               href="http://localhost:1313/tags/"/>
-  </url>
-  <url>
-    <loc>http://localhost:1313/games/</loc>
-    <lastmod>2026-05-12T00:00:00+00:00</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-    <xhtml:link
-               rel="alternate"
-               hreflang="en"
-               href="http://localhost:1313/games/"/>
   </url>
   <url>
     <loc>http://localhost:1313/misc/wirenut/</loc>
@@ -122,56 +22,6 @@
                href="http://localhost:1313/misc/wirenut/"/>
   </url>
   <url>
-    <loc>http://localhost:1313/tags/email/</loc>
-    <lastmod>2026-03-15T00:00:00+00:00</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.3</priority>
-    <xhtml:link
-               rel="alternate"
-               hreflang="en"
-               href="http://localhost:1313/tags/email/"/>
-  </url>
-  <url>
-    <loc>http://localhost:1313/marketing/</loc>
-    <lastmod>2026-03-15T00:00:00+00:00</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-    <xhtml:link
-               rel="alternate"
-               hreflang="en"
-               href="http://localhost:1313/marketing/"/>
-  </url>
-  <url>
-    <loc>http://localhost:1313/tags/marketing/</loc>
-    <lastmod>2026-03-15T00:00:00+00:00</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.3</priority>
-    <xhtml:link
-               rel="alternate"
-               hreflang="en"
-               href="http://localhost:1313/tags/marketing/"/>
-  </url>
-  <url>
-    <loc>http://localhost:1313/tags/seo/</loc>
-    <lastmod>2026-03-15T00:00:00+00:00</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.3</priority>
-    <xhtml:link
-               rel="alternate"
-               hreflang="en"
-               href="http://localhost:1313/tags/seo/"/>
-  </url>
-  <url>
-    <loc>http://localhost:1313/tags/social-media/</loc>
-    <lastmod>2026-03-15T00:00:00+00:00</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.3</priority>
-    <xhtml:link
-               rel="alternate"
-               hreflang="en"
-               href="http://localhost:1313/tags/social-media/"/>
-  </url>
-  <url>
     <loc>http://localhost:1313/marketing/untamed-auto/</loc>
     <lastmod>2026-03-15T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
@@ -180,36 +30,6 @@
                rel="alternate"
                hreflang="en"
                href="http://localhost:1313/marketing/untamed-auto/"/>
-  </url>
-  <url>
-    <loc>http://localhost:1313/tags/c%23/</loc>
-    <lastmod>2026-02-02T00:00:00+00:00</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.3</priority>
-    <xhtml:link
-               rel="alternate"
-               hreflang="en"
-               href="http://localhost:1313/tags/c%23/"/>
-  </url>
-  <url>
-    <loc>http://localhost:1313/tags/game-design/</loc>
-    <lastmod>2026-02-02T00:00:00+00:00</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.3</priority>
-    <xhtml:link
-               rel="alternate"
-               hreflang="en"
-               href="http://localhost:1313/tags/game-design/"/>
-  </url>
-  <url>
-    <loc>http://localhost:1313/tags/game-jam/</loc>
-    <lastmod>2026-02-02T00:00:00+00:00</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.3</priority>
-    <xhtml:link
-               rel="alternate"
-               hreflang="en"
-               href="http://localhost:1313/tags/game-jam/"/>
   </url>
   <url>
     <loc>http://localhost:1313/games/run-orpheus-run/</loc>
@@ -222,26 +42,6 @@
                href="http://localhost:1313/games/run-orpheus-run/"/>
   </url>
   <url>
-    <loc>http://localhost:1313/tags/portfolio/</loc>
-    <lastmod>2026-02-02T00:00:00+00:00</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.3</priority>
-    <xhtml:link
-               rel="alternate"
-               hreflang="en"
-               href="http://localhost:1313/tags/portfolio/"/>
-  </url>
-  <url>
-    <loc>http://localhost:1313/tags/unity/</loc>
-    <lastmod>2026-02-02T00:00:00+00:00</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.3</priority>
-    <xhtml:link
-               rel="alternate"
-               hreflang="en"
-               href="http://localhost:1313/tags/unity/"/>
-  </url>
-  <url>
     <loc>http://localhost:1313/marketing/the-edge/</loc>
     <lastmod>2026-01-27T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
@@ -250,26 +50,6 @@
                rel="alternate"
                hreflang="en"
                href="http://localhost:1313/marketing/the-edge/"/>
-  </url>
-  <url>
-    <loc>http://localhost:1313/tags/editing/</loc>
-    <lastmod>2026-01-27T00:00:00+00:00</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.3</priority>
-    <xhtml:link
-               rel="alternate"
-               hreflang="en"
-               href="http://localhost:1313/tags/editing/"/>
-  </url>
-  <url>
-    <loc>http://localhost:1313/tags/video-production/</loc>
-    <lastmod>2026-01-27T00:00:00+00:00</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.3</priority>
-    <xhtml:link
-               rel="alternate"
-               hreflang="en"
-               href="http://localhost:1313/tags/video-production/"/>
   </url>
   <url>
     <loc>http://localhost:1313/games/rogue-malfunction/</loc>
@@ -282,6 +62,36 @@
                href="http://localhost:1313/games/rogue-malfunction/"/>
   </url>
   <url>
+    <loc>http://localhost:1313/tags/ai/</loc>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.3</priority>
+    <xhtml:link
+               rel="alternate"
+               hreflang="en"
+               href="http://localhost:1313/tags/ai/"/>
+  </url>
+  <url>
+    <loc>http://localhost:1313/tags/blog/</loc>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.3</priority>
+    <xhtml:link
+               rel="alternate"
+               hreflang="en"
+               href="http://localhost:1313/tags/blog/"/>
+  </url>
+  <url>
+    <loc>http://localhost:1313/tags/c%23/</loc>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.3</priority>
+    <xhtml:link
+               rel="alternate"
+               hreflang="en"
+               href="http://localhost:1313/tags/c%23/"/>
+  </url>
+  <url>
     <loc>http://localhost:1313/categories/</loc>
     
     <changefreq>monthly</changefreq>
@@ -290,6 +100,196 @@
                rel="alternate"
                hreflang="en"
                href="http://localhost:1313/categories/"/>
+  </url>
+  <url>
+    <loc>http://localhost:1313/</loc>
+    
+    <changefreq>daily</changefreq>
+    <priority>1.0</priority>
+    <xhtml:link
+               rel="alternate"
+               hreflang="en"
+               href="http://localhost:1313/"/>
+  </url>
+  <url>
+    <loc>http://localhost:1313/tags/editing/</loc>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.3</priority>
+    <xhtml:link
+               rel="alternate"
+               hreflang="en"
+               href="http://localhost:1313/tags/editing/"/>
+  </url>
+  <url>
+    <loc>http://localhost:1313/tags/email/</loc>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.3</priority>
+    <xhtml:link
+               rel="alternate"
+               hreflang="en"
+               href="http://localhost:1313/tags/email/"/>
+  </url>
+  <url>
+    <loc>http://localhost:1313/tags/fun-project/</loc>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.3</priority>
+    <xhtml:link
+               rel="alternate"
+               hreflang="en"
+               href="http://localhost:1313/tags/fun-project/"/>
+  </url>
+  <url>
+    <loc>http://localhost:1313/tags/game-design/</loc>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.3</priority>
+    <xhtml:link
+               rel="alternate"
+               hreflang="en"
+               href="http://localhost:1313/tags/game-design/"/>
+  </url>
+  <url>
+    <loc>http://localhost:1313/tags/game-dev/</loc>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.3</priority>
+    <xhtml:link
+               rel="alternate"
+               hreflang="en"
+               href="http://localhost:1313/tags/game-dev/"/>
+  </url>
+  <url>
+    <loc>http://localhost:1313/tags/game-jam/</loc>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.3</priority>
+    <xhtml:link
+               rel="alternate"
+               hreflang="en"
+               href="http://localhost:1313/tags/game-jam/"/>
+  </url>
+  <url>
+    <loc>http://localhost:1313/tags/html/</loc>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.3</priority>
+    <xhtml:link
+               rel="alternate"
+               hreflang="en"
+               href="http://localhost:1313/tags/html/"/>
+  </url>
+  <url>
+    <loc>http://localhost:1313/marketing/</loc>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+    <xhtml:link
+               rel="alternate"
+               hreflang="en"
+               href="http://localhost:1313/marketing/"/>
+  </url>
+  <url>
+    <loc>http://localhost:1313/tags/marketing/</loc>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.3</priority>
+    <xhtml:link
+               rel="alternate"
+               hreflang="en"
+               href="http://localhost:1313/tags/marketing/"/>
+  </url>
+  <url>
+    <loc>http://localhost:1313/misc/</loc>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+    <xhtml:link
+               rel="alternate"
+               hreflang="en"
+               href="http://localhost:1313/misc/"/>
+  </url>
+  <url>
+    <loc>http://localhost:1313/tags/portfolio/</loc>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.3</priority>
+    <xhtml:link
+               rel="alternate"
+               hreflang="en"
+               href="http://localhost:1313/tags/portfolio/"/>
+  </url>
+  <url>
+    <loc>http://localhost:1313/tags/python/</loc>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.3</priority>
+    <xhtml:link
+               rel="alternate"
+               hreflang="en"
+               href="http://localhost:1313/tags/python/"/>
+  </url>
+  <url>
+    <loc>http://localhost:1313/tags/seo/</loc>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.3</priority>
+    <xhtml:link
+               rel="alternate"
+               hreflang="en"
+               href="http://localhost:1313/tags/seo/"/>
+  </url>
+  <url>
+    <loc>http://localhost:1313/tags/social-media/</loc>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.3</priority>
+    <xhtml:link
+               rel="alternate"
+               hreflang="en"
+               href="http://localhost:1313/tags/social-media/"/>
+  </url>
+  <url>
+    <loc>http://localhost:1313/tags/</loc>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.3</priority>
+    <xhtml:link
+               rel="alternate"
+               hreflang="en"
+               href="http://localhost:1313/tags/"/>
+  </url>
+  <url>
+    <loc>http://localhost:1313/tags/unity/</loc>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.3</priority>
+    <xhtml:link
+               rel="alternate"
+               hreflang="en"
+               href="http://localhost:1313/tags/unity/"/>
+  </url>
+  <url>
+    <loc>http://localhost:1313/games/</loc>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+    <xhtml:link
+               rel="alternate"
+               hreflang="en"
+               href="http://localhost:1313/games/"/>
+  </url>
+  <url>
+    <loc>http://localhost:1313/tags/video-production/</loc>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.3</priority>
+    <xhtml:link
+               rel="alternate"
+               hreflang="en"
+               href="http://localhost:1313/tags/video-production/"/>
   </url>
   
 </urlset>
