@@ -1,4 +1,4 @@
-*/ ---
+---
 title: "Bayesian Networks in Game AI"
 date: 2026-05-12
 tags: ["Blog", "AI", "Game Dev"]
@@ -167,4 +167,4 @@ Norsys Software Corp. (2025). Netica Application & API Documentation. norsys.com
 Iovino, M. et al. (2022). "A Survey of Behavior Trees in Robotics and AI." Robotics and Autonomous Systems, vol. 154.
 
 
-***This article reflects independent research into probabilistic AI architectures for game development.*** \* 
+***This article reflects independent research into probabilistic AI architectures for game development.*** 
