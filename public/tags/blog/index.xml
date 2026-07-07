@@ -1,18 +1,18 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Blog on Chikit</title>
-    <link>http://localhost/tags/blog/</link>
-    <description>Recent content in Blog on Chikit</description>
+    <title>Blog on Chikit&#39;s Portfolio</title>
+    <link>http://localhost:1313/tags/blog/</link>
+    <description>Recent content in Blog on Chikit&#39;s Portfolio</description>
     <generator>Hugo</generator>
     <language>en-US</language>
     <lastBuildDate>Tue, 12 May 2026 00:00:00 +0000</lastBuildDate>
-    <atom:link href="http://localhost/tags/blog/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://localhost:1313/tags/blog/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Bayesian Networks in Game AI</title>
-      <link>http://localhost/posts/your-post-name/</link>
+      <link>http://localhost:1313/games/bayesian-networks-in-game-ai/</link>
       <pubDate>Tue, 12 May 2026 00:00:00 +0000</pubDate>
-      <guid>http://localhost/posts/your-post-name/</guid>
+      <guid>http://localhost:1313/games/bayesian-networks-in-game-ai/</guid>
       <description>&lt;h1 id=&#34;beyond-behavior-trees-the-case-for-bayesian-networks-in-game-ai&#34;&gt;Beyond Behavior Trees: The Case for Bayesian Networks in Game AI&lt;/h1&gt;&#xA;&lt;h2 id=&#34;overview&#34;&gt;&lt;strong&gt;Overview&lt;/strong&gt;&lt;/h2&gt;&#xA;&lt;p&gt;Game AI hasn&amp;rsquo;t changed much in twenty years. Most NPCs — guards, enemies, companions — still run on the same basic logic they always have: a set of rules that says &amp;ldquo;if X happens, do Y.&amp;rdquo; It works well enough, and honestly, there are good reasons it became the standard. But for developers interested in pushing what NPC behavior can be, there&amp;rsquo;s a more expressive tool worth understanding.&lt;/p&gt;</description>
     </item>
   </channel>

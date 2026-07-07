@@ -1,0 +1,13 @@
+{{ define "main" }}
+  <div class="list-container">
+    <header class="list-header">
+      <h1 class="list-title"><span class="list-title-line2">MISC</span></h1>
+    </header>
+    <div class="posts-list">
+      {{ range .Pages }}
+        {{ partial "post-card.html" (dict "page" . "limit" 3) }}
+      {{ end }}
+    </div>
+    {{ partial "back-to-home.html" . }}
+  </div>
+{{ end }}

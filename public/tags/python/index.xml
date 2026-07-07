@@ -1,18 +1,18 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Python on Chikit</title>
-    <link>http://localhost/tags/python/</link>
-    <description>Recent content in Python on Chikit</description>
+    <title>Python on Chikit&#39;s Portfolio</title>
+    <link>http://localhost:1313/tags/python/</link>
+    <description>Recent content in Python on Chikit&#39;s Portfolio</description>
     <generator>Hugo</generator>
     <language>en-US</language>
     <lastBuildDate>Tue, 12 May 2026 00:00:00 +0000</lastBuildDate>
-    <atom:link href="http://localhost/tags/python/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://localhost:1313/tags/python/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>WireNut Electrician Scraper</title>
-      <link>http://localhost/posts/wirenut/</link>
+      <link>http://localhost:1313/misc/wirenut/</link>
       <pubDate>Tue, 12 May 2026 00:00:00 +0000</pubDate>
-      <guid>http://localhost/posts/wirenut/</guid>
+      <guid>http://localhost:1313/misc/wirenut/</guid>
       <description>&lt;p&gt;Check out &lt;a href=&#34;https://github.com/superoak1/WireNut-Locator&#34;&gt;WireNut Electrician Scraper&lt;/a&gt;&lt;/p&gt;&#xA;&lt;p&gt;&lt;strong&gt;WireNut Scraper: How I Automated My Lead Generation&lt;/strong&gt;&lt;/p&gt;&#xA;&lt;p&gt;Have you ever worked a shitty sales job where you had to prospect your own leads? I have and it was the worst, so I built this tool to generate leads for me without having to put in much work.&lt;/p&gt;&#xA;&lt;p&gt;&lt;strong&gt;What is it?&lt;/strong&gt;&lt;/p&gt;&#xA;&lt;p&gt;WireNut Scraper is a Windows desktop app that pulls licensed electrical contractor data from two official government registries — TSBC (Technical Safety BC) and ESA (Electrical Safety Authority Ontario) — and dumps the results straight into a Google Sheet. Enter a city, click Scrape, done.&lt;/p&gt;</description>
     </item>
   </channel>

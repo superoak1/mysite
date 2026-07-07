@@ -1,0 +1,819 @@
+<!doctype html>
+<html lang="en-US" class="h-full">
+  <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+    <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta name="language" content="en-US">
+<meta name="theme-color" content="#BD5FFF">
+<script>
+  
+  (function () {
+    const storedTheme = localStorage.getItem("theme");
+    const systemPrefersLight = window.matchMedia("(prefers-color-scheme: light)").matches;
+    const theme = storedTheme || (systemPrefersLight ? "light" : "dark");
+    document.documentElement.setAttribute("data-theme", theme);
+  })();
+  
+  (function(){var t=sessionStorage.getItem('mana_pt');if(t){document.documentElement.setAttribute('data-page-enter',t);sessionStorage.removeItem('mana_pt');}})();
+  
+  window.MANA_SEARCH_INDEX_URL = '\/index.json';
+  
+  window.MANA_LANG_PREFIXES = ['en'];
+</script>
+<title>Bayesian Networks in Game AI | Chikit&#39;s Portfolio</title>
+<meta
+  name="description"
+  content="
+    Beyond Behavior Trees: The Case for Bayesian Networks in Game AI Overview Game AI hasn&rsquo;t changed much in twenty years. Most NPCs — guards, enemies, …
+  
+  ">
+
+
+  <meta name="keywords" content="Blog, AI, Game Dev">
+
+
+
+
+
+<link rel="canonical" href="http://localhost:1313/games/bayesian-networks-in-game-ai/">
+
+
+<link rel="alternate" hreflang="en-US" href="http://localhost:1313/games/bayesian-networks-in-game-ai/"><link rel="alternate" hreflang="x-default" href="http://localhost:1313/games/bayesian-networks-in-game-ai/">
+
+
+<meta name="robots" content="index, follow">
+
+<meta property="og:type" content="article">
+<meta property="og:locale" content="en_US">
+<meta property="og:title" content="Bayesian Networks in Game AI | Chikit&#39;s Portfolio">
+<meta property="og:description" content="Beyond Behavior Trees: The Case for Bayesian Networks in Game AI Overview Game AI hasn&rsquo;t changed much in twenty years. Most NPCs — guards, enemies, …">
+<meta property="og:url" content="http://localhost:1313/games/bayesian-networks-in-game-ai/">
+<meta property="og:site_name" content="Chikit&#39;s Portfolio"><meta property="article:published_time" content="2026-05-12T00:00:00Z">
+  <meta
+    property="article:modified_time"
+    content="2026-05-12T00:00:00Z"><meta property="article:section" content="Blog"><meta property="article:tag" content="Blog"><meta property="article:tag" content="AI"><meta property="article:tag" content="Game Dev">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Bayesian Networks in Game AI | Chikit&#39;s Portfolio">
+<meta name="twitter:description" content="Beyond Behavior Trees: The Case for Bayesian Networks in Game AI Overview Game AI hasn&rsquo;t changed much in twenty years. Most NPCs — guards, enemies, …">
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+  
+
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","email":"phillip.chung5@gmail.com","name":"Chikit's Portfolio","sameAs":["https://github.com/superoak1","https://www.linkedin.com/in/phillip-chung-2ba51883/"]},"dateModified":"2026-05-12T00:00:00Z","datePublished":"2026-05-12T00:00:00Z","description":"Beyond Behavior Trees: The Case for Bayesian Networks in Game AI Overview Game AI hasn\u0026rsquo;t changed much in twenty years. Most NPCs — guards, enemies, …","headline":"Bayesian Networks in Game AI","inLanguage":"en-US","keywords":["Blog","AI","Game Dev"],"mainEntityOfPage":{"@id":"http://localhost:1313/games/bayesian-networks-in-game-ai/","@type":"WebPage"},"publisher":{"@type":"Organization","name":"Chikit's Portfolio","url":"http://localhost:1313/"},"timeRequired":"PT13M","url":"http://localhost:1313/games/bayesian-networks-in-game-ai/","wordCount":2728}</script>
+
+
+
+  
+  
+  
+  
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","item":"http://localhost:1313/","name":"Home","position":1},{"@type":"ListItem","item":"http://localhost:1313/games/bayesian-networks-in-game-ai/","name":"Bayesian Networks in Game AI","position":2}]}</script>
+
+
+
+
+
+
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link
+  href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600;700&family=Outfit:wght@400;500;600;700;800;900&family=Space+Grotesk:wght@400;500;600;700&display=swap"
+  rel="stylesheet"
+  media="print"
+  onload="this.media='all'">
+<noscript>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600;700&family=Outfit:wght@400;500;600;700;800;900&family=Space+Grotesk:wght@400;500;600;700&display=swap"
+    rel="stylesheet">
+</noscript>
+
+<link rel="stylesheet" href="/css/theme.min.29a2f04a9f41258e6c40c77a2b2be43ac8a3a9805c65165860d8b8ec5c442050.css">
+
+
+  <link
+    rel="stylesheet"
+    href="/css/syntax-dark.min.b01037e5609e6260b74d6fcdd6d5131e8dcbc4d46d6ef4bfbe5a60bdfc1a9f30.css"
+    id="syntax-dark-theme"
+    class="syntax-theme">
+  <link
+    rel="stylesheet"
+    href="/css/syntax-light.min.9602bc2fcef52b4c62e05eae14b48ba428e114f116e993e504d83ed5a3aeda98.css"
+    id="syntax-light-theme"
+    class="syntax-theme"
+    disabled><script>
+  
+  (function () {
+    const storedTheme = localStorage.getItem("theme");
+    const systemPrefersLight = window.matchMedia("(prefers-color-scheme: light)").matches;
+    const theme = storedTheme || (systemPrefersLight ? "light" : "dark");
+
+    const syntaxDark = document.getElementById("syntax-dark-theme");
+    const syntaxLight = document.getElementById("syntax-light-theme");
+
+    if (theme === "light") {
+      if (syntaxDark) syntaxDark.disabled = true;
+      if (syntaxLight) syntaxLight.disabled = false;
+    } else {
+      if (syntaxDark) syntaxDark.disabled = false;
+      if (syntaxLight) syntaxLight.disabled = true;
+    }
+
+    
+    const observer = new MutationObserver(() => {
+      const currentTheme = document.documentElement.getAttribute("data-theme");
+      if (currentTheme === "light") {
+        if (syntaxDark) syntaxDark.disabled = true;
+        if (syntaxLight) syntaxLight.disabled = false;
+      } else {
+        if (syntaxDark) syntaxDark.disabled = false;
+        if (syntaxLight) syntaxLight.disabled = true;
+      }
+    });
+
+    observer.observe(document.documentElement, {
+      attributes: true,
+      attributeFilter: ["data-theme"],
+    });
+  })();
+</script>
+
+
+
+
+<link rel="stylesheet" href="/css/bundle.min.57d6410f7c0fffb9ad468070f9ab22cec491cb85b9a66f072e8cce12fe18b8e0.css">
+
+<link rel="stylesheet" href="/css/custom.css">
+
+
+<link rel="icon" type="image/x-icon" href="/favicon.ico">
+<link rel="shortcut icon" type="image/x-icon" href="/favicon.ico">
+
+
+<link rel="icon" type="image/png" href="/favicon.png">
+
+
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+
+
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="192x192" href="/android-chrome-192x192.png">
+<link rel="icon" type="image/png" sizes="512x512" href="/android-chrome-512x512.png">
+<link rel="manifest" href="/site.webmanifest">
+
+
+
+
+  
+
+
+
+
+  </head>
+  <body class="flex flex-col min-h-screen">
+    <a href="#main-content" class="skip-to-main" aria-label="Skip to main content"
+      >Skip to main content</a
+    >
+    <header class="sticky-header">
+      <div class="header-container">
+        <nav class="header-nav" role="navigation" aria-label="Main navigation">
+  <div class="header-content">
+    <div class="header-logo">
+      <a href="/" class="logo-link" aria-label="Home - Chikit&#39;s Portfolio">
+        Chikit&#39;s Portfolio
+      </a>
+    </div>
+
+    
+    <button 
+      id="mobile-menu-toggle" 
+      class="mobile-menu-toggle" 
+      aria-label="Toggle menu" 
+      aria-expanded="false"
+      type="button">
+      <span class="hamburger-icon">
+        <span class="hamburger-line"></span>
+        <span class="hamburger-line"></span>
+        <span class="hamburger-line"></span>
+      </span>
+    </button>
+
+    <div class="header-menu">
+      <ul class="menu-list">
+  
+    <li class="menu-item">
+      <a
+        href="/games/"
+        class="menu-link ">
+        Video Games
+      </a>
+    </li>
+  
+    <li class="menu-item">
+      <a
+        href="/marketing/"
+        class="menu-link ">
+        Marketing
+      </a>
+    </li>
+  
+    <li class="menu-item">
+      <a
+        href="/misc/"
+        class="menu-link ">
+        Misc
+      </a>
+    </li>
+  
+    <li class="menu-item">
+      <a
+        href="/tags/"
+        class="menu-link ">
+        Tags
+      </a>
+    </li>
+  
+</ul>
+
+
+      <button id="search-toggle" class="search-toggle" aria-label="Search" type="button">
+        <svg class="search-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2"
+            d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
+        </svg>
+      </button>
+
+      
+
+
+      <button id="theme-toggle" class="theme-toggle" aria-label="Toggle theme" type="button">
+  <svg class="icon-sun" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+    <path
+      stroke-linecap="round"
+      stroke-linejoin="round"
+      stroke-width="2"
+      d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"></path>
+  </svg>
+  <svg class="icon-moon" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+    <path
+      stroke-linecap="round"
+      stroke-linejoin="round"
+      stroke-width="2"
+      d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"></path>
+  </svg>
+</button>
+
+    </div>
+  </div>
+</nav>
+
+      </div>
+      <div class="reading-progress-bar" aria-hidden="true"></div>
+    </header>
+
+    <main id="main-content" class="flex-1" role="main">
+      
+  <div class="single-post-wrapper">
+    <article class="single-post">
+      
+
+
+
+
+
+
+
+      <header class="post-header">
+        
+
+<nav aria-label="breadcrumb" class="breadcrumb-nav">
+  <ol class="breadcrumb-list" itemscope itemtype="https://schema.org/BreadcrumbList">
+    <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+      <a href="/" itemprop="item"><span itemprop="name">Home</span></a>
+      <meta itemprop="position" content="1" />
+      <span aria-hidden="true" class="breadcrumb-sep">›</span>
+    </li>
+    
+    <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+      <span itemprop="name" class="breadcrumb-current">Bayesian Networks in Game AI</span>
+      <meta itemprop="position" content="2" />
+    </li>
+  </ol>
+</nav>
+
+
+        <h1 class="post-title-main">Bayesian Networks in Game AI</h1>
+
+        
+
+        <div class="post-meta">
+  <div class="post-meta-info">
+    <time datetime="2026-05-12T00:00:00Z" class="post-date">
+      <svg class="meta-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          stroke-width="2"
+          d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"></path>
+      </svg>
+      May 12, 2026
+    </time>
+
+    <span class="meta-separator">•</span>
+
+    
+      <span class="post-word-count">
+        <svg class="meta-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2"
+            d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path>
+        </svg>
+        2728 words
+      </span>
+    
+
+    
+      <span class="meta-separator">•</span>
+      <span class="post-reading-time">
+        <svg class="meta-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2"
+            d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+        </svg>
+        13 min
+      </span>
+    
+  </div>
+
+  
+    <div class="post-tags">
+      
+        <a href="/tags/blog" class="post-tag">Blog</a>
+      
+        <a href="/tags/ai" class="post-tag">AI</a>
+      
+        <a href="/tags/game-dev" class="post-tag">Game Dev</a>
+      
+    </div>
+  
+</div>
+
+      </header>
+
+      <div class="post-content-main">
+        <h1 id="beyond-behavior-trees-the-case-for-bayesian-networks-in-game-ai">Beyond Behavior Trees: The Case for Bayesian Networks in Game AI</h1>
+<h2 id="overview"><strong>Overview</strong></h2>
+<p>Game AI hasn&rsquo;t changed much in twenty years. Most NPCs — guards, enemies, companions — still run on the same basic logic they always have: a set of rules that says &ldquo;if X happens, do Y.&rdquo; It works well enough, and honestly, there are good reasons it became the standard. But for developers interested in pushing what NPC behavior can be, there&rsquo;s a more expressive tool worth understanding.</p>
+<p>This article makes the case for Bayesian Networks (BNs) — a tool from statistics and AI research that lets NPCs reason under uncertainty rather than simply react to triggers. It also proposes Psyche, a middleware platform that could bring this kind of AI to game developers without requiring a statistics degree to use it.
+This isn&rsquo;t an argument that Bayesian Networks are strictly better than what exists, or that they should replace everything. They&rsquo;re a different tool with a different set of strengths — and like any tool, their value depends entirely on how and where you use them.</p>
+<h3 id="1-the-problem-with-how-game-ai-works-today"><strong>1. The Problem With How Game AI Works Today</strong></h3>
+<p>Most NPC behavior in games is built on one of two systems:</p>
+<p>Finite State Machines (FSMs) — the older approach, around since the early 1990s. The NPC is always in one &ldquo;state&rdquo; (patrolling, alert, attacking) and switches between them based on specific triggers. Simple, reliable, and easy to debug. Once you know the triggers, the NPC is completely predictable — but in many games, that predictability is by design.</p>
+<p>Behavior Trees — the more modern standard, popularized by Bungie in Halo 2 (2004) and later adopted by studios like Crytek. More flexible and better organized than FSMs, but sharing the same fundamental characteristic: they&rsquo;re deterministic. The same input always produces the same output.</p>
+<p>It&rsquo;s worth being fair to these systems. That predictability is actually a feature — it makes AI easier to test, balance, and communicate to players. A guard who always investigates after three seconds is frustrating once you figure it out, but it also means designers know exactly what players are working against. Determinism has real value.</p>
+<p>The limitation isn&rsquo;t that these systems are bad. It&rsquo;s that they start to struggle when behavior needs to depend on many interacting variables at once, or when you want NPCs to respond differently to the same situation depending on context, history, and personality. Scripting every possible combination of conditions becomes unwieldy fast. That&rsquo;s where a different approach starts to look attractive.</p>
+<h3 id="2-what-bayesian-networks-actually-are"><strong>2. What Bayesian Networks Actually Are</strong></h3>
+<p>A Bayesian Network is a way of modeling how beliefs update when new information arrives. Instead of hard rules, it works with probabilities.
+The core idea in plain terms:</p>
+<p>You start with a belief about something. New evidence comes in. You update your belief based on how likely that evidence would be if your belief were true.</p>
+<p>The math behind this is called Bayes&rsquo; theorem:</p>
+<p><strong>P(H | E) ∝ P(E | H) · P(H)</strong></p>
+<p><strong>Breaking that down:</strong></p>
+<p>P(H) — how likely you think something is before seeing any evidence (your &ldquo;prior belief&rdquo;)</p>
+<p>P(E | H) — how likely the evidence would be if your belief is correct</p>
+<p>P(H | E) — how likely your belief is after factoring in the evidence (your &ldquo;updated belief&rdquo;)</p>
+<p>Applied to a guard NPC: instead of &ldquo;heard noise → investigate,&rdquo; the guard asks &ldquo;given that I heard this noise, how likely is it that something hostile is happening?&rdquo; The answer depends on context — time of day, prior suspicion level, how loud the noise was, whether they&rsquo;ve been deceived before.</p>
+<p>Here&rsquo;s where it&rsquo;s important to be honest: a Bayesian Network can absolutely produce deterministic output. If you set up a network where &ldquo;noise heard&rdquo; always pushes the threat probability to 95%, the guard investigates every single time — functionally identical to a behavior tree. A BN isn&rsquo;t magic. Poorly designed, it produces the same mechanical behavior as anything else.</p>
+<p>The real advantage isn&rsquo;t the framework itself — it&rsquo;s what the framework makes easier to build well. Three things specifically:</p>
+<ol>
+<li>
+<p>Handling many interacting variables without scripting every combination
+A behavior tree can handle &ldquo;heard noise → investigate.&rdquo; It struggles when the decision depends on noise volume and time of day and prior suspicion level and whether an ally just reported something and the guard&rsquo;s personality type. The number of conditions you&rsquo;d need to script grows exponentially. A BN handles all of that within one structure — variables interact probabilistically, and you don&rsquo;t have to define every possible combination manually.</p>
+</li>
+<li>
+<p>Reasoning from incomplete information
+Behavior trees generally have access to everything the game engine knows. The determinism is partly a side effect of that complete information. A BN lets you deliberately give an NPC access to only partial information and have it reason from that incomplete picture. The uncertainty in the output reflects genuine uncertainty in the input — the NPC doesn&rsquo;t know everything, and its behavior reflects that.</p>
+</li>
+<li>
+<p>Probabilistic intent sampling
+When the network outputs a probability distribution over possible actions — say, 70% investigate, 20% call for backup, 10% ignore — you can sample from that distribution when deciding what actually happens. The same conditions can produce different outcomes on different occasions, without any randomness feeling arbitrary, because the probabilities reflect the actual weights of the situation.</p>
+</li>
+</ol>
+<p>None of these advantages are automatic. They require intentional design. But they&rsquo;re meaningfully harder to achieve with deterministic systems.</p>
+<h2 id="3-where-this-has-already-been-used-in-games"><strong>3. Where This Has Already Been Used in Games</strong></h2>
+<p>Probabilistic reasoning has appeared in games, though it&rsquo;s rarely labelled as such, and the claims you&rsquo;ll find online are often exaggerated. It&rsquo;s worth being specific about what&rsquo;s actually documented.</p>
+<p>The Sims uses a probability-weighted utility system to decide what a Sim does next — it evaluates needs, weights options, and selects actions based on those weights rather than fixed rules. It isn&rsquo;t a Bayesian Network in the technical sense, but it works on the same underlying principle of probabilistic decision-making under competing priorities. The result is behavior that feels varied and organic across long play sessions.</p>
+<p>Plague Inc. models disease transmission through a probabilistic population network, with transmission rates, resistances, and country responses all interacting dynamically. The developer worked with the CDC and WHO on accuracy. Again, not a Bayesian Network specifically — but the game&rsquo;s realism comes from the same core idea of interconnected probabilities rather than fixed rules.</p>
+<p>In academic research, the applications are more direct and better documented. Synnaeve &amp; Bessière (2010) built a Bayesian AI to control an avatar in World of Warcraft, training it to make combat decisions by learning from recorded human gameplay sessions. The same team later applied multi-scale Bayesian modeling to StarCraft, handling unit-level control, tactical positioning, and strategic planning within one probabilistic framework. These are research implementations, not shipping game features — but they demonstrate the approach working in real game environments.
+The honest takeaway: proven commercial examples of Bayesian Networks in shipped game AI are limited. Most documented cases are either adjacent techniques (probabilistic but not strictly BN) or academic research. That&rsquo;s part of the argument for why the tooling gap matters — the approach hasn&rsquo;t had a real chance to be tested at scale in production.</p>
+<h2 id="4-what-bn-driven-npcs-could-actually-look-like"><strong>4. What BN-Driven NPCs Could Actually Look Like</strong></h2>
+<p>The practical approach is a stack of focused networks, each handling a different part of NPC cognition, rather than one massive network trying to do everything:
+Sensing  →  Believing  →  Personality  →  Intent  →  Action</p>
+<p><strong>Sensing</strong> — The NPC assigns a confidence level to what it perceives rather than a binary detected/not-detected. A noise heard from far away in a loud environment is weak evidence. The same noise up close in a quiet room is strong evidence. The same event carries different weight depending on conditions.</p>
+<p><strong>Believing</strong> — The NPC maintains running probability estimates about the world: Where is the player probably located? How much of a threat are they? Are my allies reliable? Is this area safe? These update as new information arrives, and they decay over time when no new information reinforces them.</p>
+<p><strong>Personality</strong> — A paranoid guard and a relaxed guard hear the same noise and reach different conclusions — not because they follow different scripts, but because their starting probability estimates differ. A paranoid NPC weights the same evidence more heavily toward threat. A cowardly one already leans toward retreat before anything happens. Personality is expressed through prior probabilities, not separate behavior logic.</p>
+<p><strong>Intent</strong> — The network outputs a distribution over possible actions rather than a single decision. That distribution is then sampled to determine what actually happens. This is where genuine behavioral variety comes from — not randomness for its own sake, but probability reflecting the actual weight of the situation.</p>
+<p><strong>Action</strong> — Standard game systems handle execution. Pathfinding, animation, combat — these don&rsquo;t change. The BN handles what the NPC wants to do. Keeping these concerns separate is what makes the approach computationally viable.</p>
+<p>The social layer is where the design space gets particularly interesting. NPCs sharing information with each other — but with that communication modeled probabilistically — means trusted allies update your beliefs more than strangers, rumors degrade in accuracy as they pass through multiple NPCs, and a skeptical guard might not act on a panicked colleague&rsquo;s report. These dynamics emerge from the network without being individually scripted.</p>
+<p>That said: all of this requires careful design. A poorly structured BN with bad priors produces NPC behavior just as unconvincing as a badly written behavior tree. The framework doesn&rsquo;t guarantee quality — it expands what quality can look like.</p>
+<h2 id="5-the-missing-infrastructure--introducing-psyche"><strong>5. The Missing Infrastructure — Introducing Psyche</strong></h2>
+<p>The reason Bayesian game AI hasn&rsquo;t been tested seriously in production isn&rsquo;t that the math doesn&rsquo;t work. It&rsquo;s that the tooling to make it accessible doesn&rsquo;t exist.
+Every probabilistic AI tool currently available was designed for researchers and statisticians. Game designers — the people who define how NPCs think and feel — have no practical way to work with these systems without significant technical expertise. That barrier is the real obstacle, not the underlying technology.
+Psyche is a proposed middleware platform designed to address it. Three layers:</p>
+<h3 id="psyche-studio--the-design-tool"><strong>Psyche Studio — the design tool</strong></h3>
+<p>A designer describes an NPC in plain terms: &ldquo;This guard is paranoid, loyal, and holds grudges.&rdquo; Studio translates those descriptors into a working probability network. Designers can run simulated scenarios — &ldquo;What does this NPC do if they hear a noise but see nothing?&rdquo; — and observe how beliefs resolve, without writing code or launching the game. A library of personality archetypes provides starting points that designers can adjust.</p>
+<p>The key design challenge here is significant: translating natural language personality descriptors into mathematically meaningful prior distributions is a hard problem. The Studio layer would need careful validation to ensure &ldquo;paranoid&rdquo; in the designer&rsquo;s head corresponds to something sensible in the network. This is solvable, but it&rsquo;s not trivial.</p>
+<h3 id="psyche-runtime--the-engine-inside-the-game"><strong>Psyche Runtime — the engine inside the game</strong></h3>
+<p>The inference engine running in the background during gameplay. Calculations happen on background threads to avoid impacting framerate. The system scales by running full inference for nearby NPCs and lighter approximations for distant ones. NPCs can share evidence through simulated communication channels with configurable reliability.</p>
+<p>It&rsquo;s worth noting: this runtime would need to be built to handle the performance constraints of real game environments, which are significantly more demanding than the research contexts where BN inference has been validated. Approximation methods would be necessary at scale, and those introduce their own tradeoffs in accuracy.</p>
+<h3 id="psyche-insights--the-debugging-layer"><strong>Psyche Insights — the debugging layer</strong></h3>
+<p>A toggleable overlay showing each NPC&rsquo;s belief state updating in real time during playtesting. Designers can see what each NPC believes, when beliefs shift, and why a decision was made — something essentially invisible in conventional behavior tree AI. A decision recorder allows replay of any NPC&rsquo;s reasoning history.
+This layer might actually be the most immediately valuable part of the platform, even before the runtime is fully mature. Visibility into NPC cognition is useful regardless of the underlying AI architecture.</p>
+<h2 id="6-what-this-changes-for-players--and-what-it-doesn"><strong>6. What This Changes for Players — And What It Doesn&rsquo;t</strong></h2>
+<p>The downstream effect of well-implemented BN-driven AI is NPCs that are harder to reduce to a pattern — guards whose suspicion accumulates across a session, factions that notice your playstyle over time, antagonists that adapt rather than repeat.
+Deception becomes a real mechanic. If NPCs reason probabilistically about evidence, players can deliberately manipulate what they believe — planting sounds in the wrong location, using disguises, feeding misinformation through NPC social networks. That&rsquo;s a category of gameplay that scripted AI can approximate but not fully deliver.
+The broader applications extend to other genres:</p>
+<p>RPGs — Relationships that evolve based on accumulated history, not conversation flags
+Strategy games — Enemy factions that read your playstyle and respond to it
+Horror games — Antagonists that learn your behavioral patterns and exploit them
+Simulation games — Populations where social dynamics and collective behavior emerge from the system rather than from scripts</p>
+<p>It&rsquo;s important to be realistic about what this doesn&rsquo;t solve. Bayesian NPC AI is not going to make games feel like interacting with real people. It&rsquo;s a more expressive tool for a specific problem — the combinatorial complexity of context-dependent NPC behavior — not a general solution to immersion or narrative quality. A game with compelling characters still needs good writing, good animation, and good sound. The AI layer is one piece of a much larger picture.</p>
+<h2 id="7-the-challenges-worth-taking-seriously"><strong>7. The Challenges Worth Taking Seriously</strong></h2>
+<p>Several real technical problems stand between this approach and production use:</p>
+<p><strong>Computational cost</strong> — Exact inference in large networks is expensive. Keeping individual networks small and focused, and using approximation methods where needed, manages this — but approximation introduces accuracy tradeoffs that need to be validated per use case.</p>
+<p><strong>Temporal modeling</strong> — Games unfold continuously over time. Most BN inference is designed for discrete update steps, not continuous belief evolution. Handling belief decay, time-delayed evidence, and ongoing world changes in a way that feels natural is an open problem.</p>
+<p><strong>Multi-agent scale</strong> — Thousands of NPCs sharing evidence in a large open world introduces synchronization complexity that hasn&rsquo;t been fully worked out in real-time contexts.</p>
+<p><strong>Designer accessibility</strong> — Even with a well-designed tool, probabilistic systems are less intuitive to tune than behavior trees. A designer who can&rsquo;t predict what their network will do in a given situation can&rsquo;t design around it effectively. Tooling quality and training matter enormously.</p>
+<p>These aren&rsquo;t reasons to abandon the approach. They&rsquo;re the actual engineering problems that would need to be solved to ship it. Acknowledging them honestly is more useful than pretending the path is straightforward.</p>
+<h2 id="8-conclusion"><strong>8. Conclusion</strong></h2>
+<p>Behavior trees and finite state machines became the standard for good reasons. They&rsquo;re understandable, testable, and reliable. The argument here isn&rsquo;t that they should be discarded — it&rsquo;s that they leave a specific design space underexplored: NPC behavior that depends on many interacting variables, partial information, and context that&rsquo;s too complex to script exhaustively.</p>
+<p>Bayesian Networks are a proven tool for exactly that problem, with documented applications in robotics, medicine, and — in limited but meaningful ways — games. The math works. What hasn&rsquo;t existed is the tooling layer that makes it practical for the people who build games to use.</p>
+<p>Psyche is a proposal for what that layer could look like. The showcase project is the proof of concept. Whether it succeeds or fails, the experiment is worth running — because the alternative is another decade of guards who investigate after exactly three seconds.</p>
+<h2 id="references--further-reading"><strong>References &amp; Further Reading</strong></h2>
+<p>Pearl, J. (1988). Probabilistic Reasoning in Intelligent Systems: Networks of Plausible Inference. Morgan Kaufmann.</p>
+<p>Millington, I. &amp; Funge, J. (2009). Artificial Intelligence for Games, 2nd Ed. Morgan Kaufmann.</p>
+<p>Synnaeve, G. &amp; Bessière, P. (2010). &ldquo;Bayesian Modeling of a Human MMORPG Player.&rdquo; 30th International Workshop on Bayesian Inference and Maximum Entropy, Chamonix, France. (arXiv:1011.5480)</p>
+<p>Synnaeve, G. &amp; Bessière, P. (2012). &ldquo;Multi-scale Bayesian Modeling for RTS Games: An Application to StarCraft AI.&rdquo; INRIA / CNRS.</p>
+<p>Tozour, P. (2002). &ldquo;Fuzzy Logic and Bayesian Networks.&rdquo; AI Game Programming Wisdom. Charles River Media.</p>
+<p>Isla, D. (2005). &ldquo;Handling Complexity in the Halo 2 AI.&rdquo; Game Developers Conference Proceedings.</p>
+<p>Norsys Software Corp. (2025). Netica Application &amp; API Documentation. norsys.com
+Iovino, M. et al. (2022). &ldquo;A Survey of Behavior Trees in Robotics and AI.&rdquo; Robotics and Autonomous Systems, vol. 154.</p>
+<p><em><strong>This article reflects independent research into probabilistic AI architectures for game development.</strong></em></p>
+
+      </div>
+
+      
+        <footer class="post-footer">
+          <div class="post-tags-footer">
+            <span class="tags-label">Tags:</span>
+            
+              <a href="/tags/blog" class="post-tag">Blog</a>
+            
+              <a href="/tags/ai" class="post-tag">AI</a>
+            
+              <a href="/tags/game-dev" class="post-tag">Game Dev</a>
+            
+          </div>
+        </footer>
+      
+
+      
+
+
+
+
+      <nav class="post-navigation" aria-label="Post navigation">
+        
+          <a
+            href="/games/run-orpheus-run/"
+            class="nav-link nav-prev"
+            aria-label="Previous post: Game Jam: Run Orpheus Run!">
+            <span class="nav-label">Previous</span>
+            <span class="nav-title">Game Jam: Run Orpheus Run!</span>
+          </a>
+        
+
+        
+      </nav>
+    </article>
+
+    
+  <aside class="post-toc" id="post-toc" aria-label="Table of Contents">
+    <button
+      class="toc-toggle"
+      id="toc-toggle"
+      aria-expanded="true"
+      aria-controls="toc-content"
+      aria-label="Toggle table of contents">
+      <svg
+        class="toc-burger-icon"
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="2"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        aria-hidden="true">
+        <line x1="3" y1="6" x2="21" y2="6"></line>
+        <line x1="3" y1="12" x2="21" y2="12"></line>
+        <line x1="3" y1="18" x2="21" y2="18"></line>
+      </svg>
+      <span class="toc-toggle-text">Table of Contents</span>
+      <svg
+        class="toc-chevron-icon"
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="2"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        aria-hidden="true">
+        <polyline points="6 9 12 15 18 9"></polyline>
+      </svg>
+    </button>
+    <div class="toc-content" id="toc-content">
+      <nav class="toc-nav" aria-label="Table of Contents">
+        <nav id="TableOfContents">
+  <ul>
+    <li><a href="#overview"><strong>Overview</strong></a>
+      <ul>
+        <li><a href="#1-the-problem-with-how-game-ai-works-today"><strong>1. The Problem With How Game AI Works Today</strong></a></li>
+        <li><a href="#2-what-bayesian-networks-actually-are"><strong>2. What Bayesian Networks Actually Are</strong></a></li>
+      </ul>
+    </li>
+    <li><a href="#3-where-this-has-already-been-used-in-games"><strong>3. Where This Has Already Been Used in Games</strong></a></li>
+    <li><a href="#4-what-bn-driven-npcs-could-actually-look-like"><strong>4. What BN-Driven NPCs Could Actually Look Like</strong></a></li>
+    <li><a href="#5-the-missing-infrastructure--introducing-psyche"><strong>5. The Missing Infrastructure — Introducing Psyche</strong></a>
+      <ul>
+        <li><a href="#psyche-studio--the-design-tool"><strong>Psyche Studio — the design tool</strong></a></li>
+        <li><a href="#psyche-runtime--the-engine-inside-the-game"><strong>Psyche Runtime — the engine inside the game</strong></a></li>
+        <li><a href="#psyche-insights--the-debugging-layer"><strong>Psyche Insights — the debugging layer</strong></a></li>
+      </ul>
+    </li>
+    <li><a href="#6-what-this-changes-for-players--and-what-it-doesn"><strong>6. What This Changes for Players — And What It Doesn’t</strong></a></li>
+    <li><a href="#7-the-challenges-worth-taking-seriously"><strong>7. The Challenges Worth Taking Seriously</strong></a></li>
+    <li><a href="#8-conclusion"><strong>8. Conclusion</strong></a></li>
+    <li><a href="#references--further-reading"><strong>References &amp; Further Reading</strong></a></li>
+  </ul>
+</nav>
+      </nav>
+    </div>
+  </aside>
+
+
+  </div>
+
+    </main>
+
+    <footer>
+      <footer class="site-footer">
+  <div class="footer-content">
+    <p class="footer-text">
+      &copy;
+      
+      2026
+      
+      Chikit&#39;s Portfolio.
+      
+    </p>
+    
+      <div class="footer-social">
+        <div class="social-links">
+  
+    <a
+      href="https://github.com/superoak1"
+      target="_blank"
+      rel="noopener noreferrer"
+      class="social-link"
+      aria-label="GitHub">
+      <svg fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+        <path
+          fill-rule="evenodd"
+          d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"
+          clip-rule="evenodd"></path>
+      </svg>
+    </a>
+  
+
+  
+
+  
+    <a
+      href="https://www.linkedin.com/in/phillip-chung-2ba51883/"
+      target="_blank"
+      rel="noopener noreferrer"
+      class="social-link"
+      aria-label="LinkedIn">
+      <svg fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+        <path
+          d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"></path>
+      </svg>
+    </a>
+  
+
+  
+
+  
+    <a href="mailto:phillip.chung5@gmail.com" class="social-link" aria-label="Email">
+      <svg fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+        <path
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          stroke-width="2"
+          d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path>
+      </svg>
+    </a>
+  
+</div>
+
+      </div>
+    
+  </div>
+</footer>
+
+    </footer>
+
+    <div id="search-modal" class="search-modal" aria-hidden="true" role="dialog" aria-label="Search" data-no-results="No results found">
+  <div class="search-modal-backdrop" id="search-modal-backdrop"></div>
+  <div class="search-modal-container">
+    <div class="search-input-wrapper">
+      <svg class="search-input-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          stroke-width="2"
+          d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
+      </svg>
+      <input
+        type="search"
+        id="search-input"
+        class="search-input"
+        placeholder="Search..."
+        autocomplete="off"
+        aria-label="Search">
+      <button class="search-input-clear" id="search-input-clear" aria-label="Clear search">
+        <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2"
+            d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16"></path>
+        </svg>
+      </button>
+      <button class="search-modal-close" id="search-modal-close" aria-label="Close search">
+        <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2"
+            d="M6 18L18 6M6 6l12 12"></path>
+        </svg>
+      </button>
+    </div>
+    <div id="search-results" class="search-results"></div>
+  </div>
+</div>
+
+    
+<div id="mobile-menu" class="mobile-menu" aria-hidden="true">
+  <div class="mobile-menu-overlay"></div>
+  <div class="mobile-menu-content">
+    <div class="mobile-menu-header">
+      <span class="mobile-menu-title">Menu</span>
+      <button
+        id="mobile-menu-close"
+        class="mobile-menu-close"
+        aria-label="Close menu"
+        type="button">
+        <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+        </svg>
+      </button>
+    </div>
+    <nav class="mobile-menu-nav" role="navigation" aria-label="Mobile navigation">
+      <ul class="menu-list">
+  
+    <li class="menu-item">
+      <a
+        href="/games/"
+        class="menu-link ">
+        Video Games
+      </a>
+    </li>
+  
+    <li class="menu-item">
+      <a
+        href="/marketing/"
+        class="menu-link ">
+        Marketing
+      </a>
+    </li>
+  
+    <li class="menu-item">
+      <a
+        href="/misc/"
+        class="menu-link ">
+        Misc
+      </a>
+    </li>
+  
+    <li class="menu-item">
+      <a
+        href="/tags/"
+        class="menu-link ">
+        Tags
+      </a>
+    </li>
+  
+</ul>
+
+    </nav>
+    <div class="mobile-menu-footer">
+      <button id="mobile-search-toggle" class="mobile-search-toggle" aria-label="Search" type="button">
+        <svg class="search-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2"
+            d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
+        </svg>
+        <span>Search</span>
+      </button>
+      
+
+      <button class="theme-toggle" aria-label="Toggle theme" type="button">
+        <svg class="icon-sun" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2"
+            d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"></path>
+        </svg>
+        <svg class="icon-moon" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2"
+            d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"></path>
+        </svg>
+      </button>
+    </div>
+  </div>
+</div>
+
+    
+
+    <button id="scroll-to-top" class="scroll-to-top" aria-label="Scroll to top" type="button">
+  <svg fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+    <path
+      stroke-linecap="round"
+      stroke-linejoin="round"
+      stroke-width="2"
+      d="M5 10l7-7m0 0l7 7m-7-7v18"></path>
+  </svg>
+</button>
+
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+<script src="/js/main.min.137938305a4255a5ce0531471a42b4448c4adb05e04052a70000719c0704d082.js" defer></script>
+
+  </body>
+</html>

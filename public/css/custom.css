@@ -1,0 +1,39 @@
+/* Category buttons on home page */
+.category-section {
+  padding: 3rem 0;
+  text-align: center;
+}
+
+.category-buttons {
+  display: flex;
+  gap: 2rem;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.category-btn {
+  display: inline-block;
+  padding: 1.25rem 3rem;
+  font-size: 1.2rem;
+  font-family: var(--font-heading);
+  border: 2px solid var(--accent-primary);
+  border-radius: 0.5rem;
+  text-decoration: none;
+  color: var(--accent-primary);
+  transition: all var(--transition-base);
+  background: var(--glass-surface);
+  backdrop-filter: blur(12px);
+}
+
+.category-btn:hover {
+  background: var(--accent-primary);
+  color: #fff;
+  box-shadow: var(--shadow-md);
+}
+
+@media (max-width: 768px) {
+  .category-buttons {
+    flex-direction: column;
+    align-items: center;
+  }
+}

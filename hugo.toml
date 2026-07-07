@@ -1,6 +1,6 @@
-baseURL = 'https://www.chikit.ca/'
+baseURL = 'https://chikit.ca/'
 languageCode = 'en-US'
-title = "Chikit Portfolio"
+title = "Chikit's Portfolio"
 theme = 'mana'
 
 [outputs]
@@ -11,27 +11,32 @@ theme = 'mana'
   heroTitleLine1 = 'Portfolio'
   heroTitleLine2 = 'Video Games and Marketing'
 
+[params.social]
+  github = "https://github.com/superoak1"
+  linkedin = "https://www.linkedin.com/in/phillip-chung-2ba51883/"
+  email = "phillip.chung5@gmail.com"
+
+[markup]
+  [markup.goldmark]
+    [markup.goldmark.renderer]
+      unsafe = true
+
 [[menus.main]]
-  name = 'Home'
-  pageRef = '/'
+  name = "Video Games"
+  url = "/games/"
   weight = 10
 
 [[menus.main]]
-  name = 'Posts'
-  pageRef = '/posts'
+  name = "Marketing"
+  url = "/marketing/"
   weight = 20
+
+[[menus.main]]
+  name = "Misc"
+  url = "/misc/"
+  weight = 25
 
 [[menus.main]]
   name = "Tags"
   pageRef = "/tags"
   weight = 30
-
-  [params.social]
-  github = "https://github.com/superoak1"
-  linkedin = "https://www.linkedin.com/in/phillip-chung-2ba51883/"
-  email = "phillip.chung5@gmail.com"
-
-  [markup]
-  [markup.goldmark]
-    [markup.goldmark.renderer]
-      unsafe = true
