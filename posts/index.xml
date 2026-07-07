@@ -21,11 +21,4 @@ My roles:&lt;/p&gt;</description></item><item><title>Canadian Music Week 2017 In
 &lt;p&gt;Check out &lt;a href="https://arian-shahrabi.itch.io/rogue"&gt;Rogue Malfunction&lt;/a&gt;.&lt;/p&gt;
 &lt;p&gt;A 4-day puzzle platformer built on a single core mechanic: dynamic control remapping. On entering each room, the game silently reassigns WASD inputs — turning movement itself into the obstacle. The design challenge was making that feel fair and readable without losing the disorientation that makes it work.
 My roles:&lt;/p&gt;
-&lt;p&gt;Systems Designer — Architected the input remapping system, defining the logic for how and when controls shift per room to ensure the mechanic felt intentional and tunable rather than arbitrary&lt;/p&gt;</description></item><item><title/><link>https://www.chikit.ca/posts/bayesian-networks-in-game-ai/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://www.chikit.ca/posts/bayesian-networks-in-game-ai/</guid><description>&lt;h2 id="draft-true"&gt;*/ &amp;mdash;
-title: &amp;ldquo;Bayesian Networks in Game AI&amp;rdquo;
-date: 2026-05-12
-tags: [&amp;ldquo;Blog&amp;rdquo;, &amp;ldquo;AI&amp;rdquo;, &amp;ldquo;Game Dev&amp;rdquo;]
-draft: true&lt;/h2&gt;
-&lt;h1 id="beyond-behavior-trees-the-case-for-bayesian-networks-in-game-ai"&gt;Beyond Behavior Trees: The Case for Bayesian Networks in Game AI&lt;/h1&gt;
-&lt;h2 id="overview"&gt;&lt;strong&gt;Overview&lt;/strong&gt;&lt;/h2&gt;
-&lt;p&gt;Game AI hasn&amp;rsquo;t changed much in twenty years. Most NPCs — guards, enemies, companions — still run on the same basic logic they always have: a set of rules that says &amp;ldquo;if X happens, do Y.&amp;rdquo; It works well enough, and honestly, there are good reasons it became the standard. But for developers interested in pushing what NPC behavior can be, there&amp;rsquo;s a more expressive tool worth understanding.&lt;/p&gt;</description></item></channel></rss>
+&lt;p&gt;Systems Designer — Architected the input remapping system, defining the logic for how and when controls shift per room to ensure the mechanic felt intentional and tunable rather than arbitrary&lt;/p&gt;</description></item></channel></rss>
