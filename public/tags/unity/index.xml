@@ -13,7 +13,7 @@
       <link>http://localhost:1313/games/run-orpheus-run/</link>
       <pubDate>Mon, 02 Feb 2026 00:00:00 +0000</pubDate>
       <guid>http://localhost:1313/games/run-orpheus-run/</guid>
-      <description>&lt;iframe frameborder=&#34;0&#34; src=&#34;https://itch.io/embed/3928264&#34; width=&#34;552&#34; height=&#34;167&#34;&gt;&lt;a href=&#34;https://arian-shahrabi.itch.io/run-orpheus&#34;&gt;Run Orpheus Run! by Arian, superoak, NoahOutTheWoods, Ethan Ticar&lt;/a&gt;&lt;/iframe&gt;&#xD;&#xA;&lt;p&gt;(please excuse the bad cover image, I&amp;rsquo;m no artist)&lt;/p&gt;&#xA;&lt;p&gt;Check out &lt;a href=&#34;https://arian-shahrabi.itch.io/run-orpheus&#34;&gt;Run Orpheus Run!&lt;/a&gt;.&lt;/p&gt;&#xA;&lt;p&gt;Run Orpheus Run! — TFS Game Jam, Summer 2025&#xA;A 3-day endless runner built on Greek mythology. You play as Orpheus fleeing the Underworld, with Hades closing in behind you. Navigate procedurally generated obstacles across three lanes, collect coins, and survive as long as possible before he catches you.&#xA;My roles:&lt;/p&gt;</description>
+      <description>&lt;ul&gt;&#xA;&lt;li&gt;Fast-paced runner game&lt;/li&gt;&#xA;&lt;li&gt;Made in 4 days for TFS Game Jam Summer 2025&lt;/li&gt;&#xA;&lt;li&gt;Built in Unity with C#&lt;/li&gt;&#xA;&lt;/ul&gt;</description>
     </item>
     <item>
       <title>Game Jam: Rogue Malfunction</title>

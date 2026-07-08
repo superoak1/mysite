@@ -2,6 +2,12 @@
 title: "Game Jam: Rogue Malfunction"
 date: 2025-12-21
 tags: ["portfolio", "game design", "game jam", "unity", "C#"]
+category: "games"
+summary_text: "Imagine you're a sentient robot and you're trying to escape your maker but he keeps changing your controls as you try to escape."
+summary_bullets:
+  - "Fast-paced infinite runner"
+  - "Made in 4 days"
+  - "Built in Unity with C#"
 draft: false
 ---
 <iframe frameborder="0" src="https://itch.io/embed/4155009" width="552" height="167"><a href="https://arian-shahrabi.itch.io/rogue">Rogue Malfunction by Arian, Ethan Ticar, superoak, Alice_TFS</a></iframe>
